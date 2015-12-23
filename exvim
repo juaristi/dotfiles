@@ -1,0 +1,21 @@
+#!/bin/bash
+# Add this file to $PATH, so that I can run exvim from anywhere.
+SHELL="/bin/bash"
+
+if [ "$1" = "-gui" ]; then
+	EXEC="gvim.sh"
+	shift
+else
+	EXEC="vim.sh"
+fi
+
+# get the full path of the .exvim file
+PROJECT_PATH="$(readlink -f $1)"
+
+# exVim uses $(pwd) to retrieve its config files
+cd "$HOME/codebase/exvim"
+
+echo ".exVim file: $PROJECT_PATH"
+echo "Running $EXEC"
+$SHELL unix/$EXEC "$PROJECT_PATH"
+
