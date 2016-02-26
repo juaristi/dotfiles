@@ -11,3 +11,4 @@ unmap R
 
 map <F3> <C-]>
 map <F8> :TlistToggle<CR>
+map <F5> <leader>R

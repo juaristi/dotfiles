@@ -13,7 +13,7 @@ fi
 PROJECT_PATH="$(readlink -f $1)"
 
 # exVim uses $(pwd) to retrieve its config files
-cd "$HOME/codebase/exvim"
+cd "$HOME/code/exvim"
 
 echo ".exVim file: $PROJECT_PATH"
 echo "Running $EXEC"
