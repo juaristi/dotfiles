@@ -19,18 +19,19 @@ RUN apt-get install -y --no-install-recommends aptitude man-db
 RUN git config --global user.email "ajuaristi@gmx.es"
 RUN git config --global user.name "Ander Juaristi"
 
-# TODO
 # First clone base exVim.
 # Second, merge my contributions, not yet in upstream.
 
 WORKDIR /root
+ADD .bashrc .bashrc
+
 #RUN wget https://github.com/exvim/main/releases/download/v0.5.0/exvim-v0.5.0.tar.gz
 #RUN mkdir exvim && tar -xz -C exvim -f exvim-v0.5.0.tar.gz && rm exvim-v0.5.0.tar.gz
 RUN git clone https://github.com/juaristi/main exvim
 WORKDIR exvim
 
 RUN chmod u+x unix/*
-RUN script -qc "/bin/bash unix/install.sh" /dev/null
+RUN unix/install.sh
 
 #
 #
