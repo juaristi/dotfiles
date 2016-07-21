@@ -1,4 +1,4 @@
-# [fresh] dotfiles
+# [fresh](https://github.com/freshshell/fresh) dotfiles
 
 Destination path: `~/code/dotfiles`
 
