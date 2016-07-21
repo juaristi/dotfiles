@@ -1,0 +1,15 @@
+# freshshell.com
+fresh freshshell/fresh bin/fresh --bin
+
+# My exVim configuration (http://exvim.github.io)
+EXVIM_DIR="~/code/exvim"
+EXVIM_EXEC="$EXVIM_DIR/exvim"
+EXVIM_AFTER="$EXVIM_DIR/vimfiles/bundle/ex-config/after/plugin/config.vim"
+fresh juaristi/dotfiles exvim --bin=$EXVIM_EXEC
+
+if [ -f $EXVIM_AFTER ]; then
+  echo "-- .freshrc: removing old exVim post config file"
+  rm $EXVIM_AFTER
+fi
+
+fresh juaristi/dotfiles config.vim --file=$EXVIM_AFTER
