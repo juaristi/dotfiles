@@ -46,7 +46,11 @@ require("lazy").setup({
     {
       "preservim/nerdtree",
       init = function()
-        vim.cmd([[nmap <C-n> :NERDTreeToggle<CR>]])
+        vim.cmd([[
+          let NERDTreeIgnore = ['\~$', '__pycache__']
+          nmap <F5> :NERDTreeRefreshRoot<CR>
+          nmap <C-n> :NERDTreeToggle<CR>
+        ]])
       end,
     },
     {
